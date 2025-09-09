@@ -13,6 +13,14 @@ TEST_CASE("Test echo_variable returns input value", "[echo_variable]") {
 	REQUIRE(echo_variable(123456) == 123456);
 }
 
+TEST_CASE("Test add_numbers returns sum of two integers", "[add_numbers]") {
+	REQUIRE(add_numbers(0, 0) == 0);
+	REQUIRE(add_numbers(1, 2) == 3);
+	REQUIRE(add_numbers(-5, 5) == 0);
+	REQUIRE(add_numbers(100, 200) == 300);
+	REQUIRE(add_numbers(-10, -20) == -30);
+}
+
 /*test case echo_variable */
 
 /*test case add_to_double_1 with 0 as parameter*/
