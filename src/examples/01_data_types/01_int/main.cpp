@@ -5,7 +5,9 @@ using std::cout;
 
 int main()
 {   
-    double result = add_doubles(3.5, 2.5);
-    cout << "Result: " << result << "\n";
+    int hours = 40;
+    double rate = 15.33;
+    double pay = gross_pay(hours, rate);
+    cout << "Gross pay: " << pay << "\n";
     return 0;
 }
