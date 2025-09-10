@@ -5,12 +5,7 @@ using std::cout;
 
 int main()
 {   
-    int result;//declare
-    result = add_numbers(5, 7);
-    cout << "The sum is: " << result << "\n";
-
-    result = 50;
-    cout << "The sum is: " << result << "\n";
-
+    double result = add_doubles(3.5, 2.5);
+    cout << "Result: " << result << "\n";
     return 0;
 }
