@@ -2,3 +2,4 @@
 int echo_variable(int num);//header/signature/prototype
 int add_numbers(int num1, int num2);
 double add_doubles(double num1, double num2);
+double gross_pay(int hours, double rate);

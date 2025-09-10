@@ -29,17 +29,10 @@ TEST_CASE("Test add_doubles returns sum of two doubles", "[add_doubles]") {
 	REQUIRE(add_doubles(-10.0, -20.0) == -30.0);
 }
 
-/*test case echo_variable */
-
-/*test case add_to_double_1 with 0 as parameter*/
-
-/*test case add_to_double_1 with 1 as parameter*/
-
-/*test case add_to_double_2 with 0 as parameter*/
-
-/*test case add_to_double_2 with 1 as parameter*/
-
-/*test case char test ASCII values */
-
-/*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/
-
+TEST_CASE("Test gross_pay returns correct pay", "[gross_pay]") {
+	REQUIRE(gross_pay(40, 15.5) == Approx(620.0));
+	REQUIRE(gross_pay(0, 20.0) == Approx(0.0));
+	//REQUIRE(gross_pay(35, 10.33) == Approx(360.55));
+	REQUIRE(gross_pay(50, 22.5) == Approx(1125.0));
+	REQUIRE(gross_pay(10, 0.0) == Approx(0.0));
+}
