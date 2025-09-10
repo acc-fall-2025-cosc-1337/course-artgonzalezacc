@@ -21,6 +21,14 @@ TEST_CASE("Test add_numbers returns sum of two integers", "[add_numbers]") {
 	REQUIRE(add_numbers(-10, -20) == -30);
 }
 
+TEST_CASE("Test add_doubles returns sum of two doubles", "[add_doubles]") {
+	REQUIRE(add_doubles(0.0, 0.0) == 0.0);
+	REQUIRE(add_doubles(1.1, 2.2) == Approx(3.3));
+	REQUIRE(add_doubles(-5.5, 5.5) == 0.0);
+	REQUIRE(add_doubles(100.0, 200.0) == 300.0);
+	REQUIRE(add_doubles(-10.0, -20.0) == -30.0);
+}
+
 /*test case echo_variable */
 
 /*test case add_to_double_1 with 0 as parameter*/
