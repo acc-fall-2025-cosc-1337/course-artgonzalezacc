@@ -3,21 +3,22 @@
 
 using std::cout;
 using std::cin;
+using std::endl;
+
 
 int main() 
 {
-	//create a bool variable named even
-	//create an int variable named value
+	char letter;
+	cout << "Enter a letter: ";
+	cin >> letter;
 
-	//prompt user for a keyboard number
-	//assign the number to the value variable
-
-	//call the is_even function with value as its argument
-	//and assign its return value to the even variable
-	
-
-	//display even if number is even
-
+	if (is_vowel(letter)) {
+		cout << letter << " is a vowel." << endl;
+	} else if (is_consonant(letter)) {
+		cout << letter << " is a consonant." << endl;
+	} else {
+		cout << letter << " is not a valid letter." << endl;
+	}
 
 	return 0;
 }
