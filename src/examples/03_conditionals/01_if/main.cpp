@@ -1,5 +1,4 @@
 #include<iostream>
-#include "if.h"//to use is_even function here
 
 using std::cout;
 using std::cin;
@@ -8,17 +7,16 @@ using std::endl;
 
 int main() 
 {
-	char letter;
-	cout << "Enter a letter: ";
-	cin >> letter;
-
-	if (is_vowel(letter)) {
-		cout << letter << " is a vowel." << endl;
-	} else if (is_consonant(letter)) {
-		cout << letter << " is a consonant." << endl;
-	} else {
-		cout << letter << " is not a valid letter." << endl;
+	//curly braces are optional for single statement blocks
+	//but it is a good practice to always use them
+	//this helps to avoid bugs when adding statements later
+	//and improves readability
+	if(true)
+	{
+		cout << "Condition is true" << endl;
+		cout << "Condition ???" << endl;
 	}
+
 
 	return 0;
 }
