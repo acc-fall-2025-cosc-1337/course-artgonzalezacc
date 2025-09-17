@@ -11,10 +11,14 @@ int main()
 	//but it is a good practice to always use them
 	//this helps to avoid bugs when adding statements later
 	//and improves readability
-	if(true)
+	if(false)
 	{
 		cout << "Condition is true" << endl;
 		cout << "Condition ???" << endl;
+	}
+	else
+	{
+		cout << "Condition is false" << endl;
 	}
 
 
