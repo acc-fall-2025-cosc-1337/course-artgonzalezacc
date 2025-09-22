@@ -3,25 +3,15 @@
 
 using std::cout;
 using std::cin;
-using std::endl;
-using std::string;
 
 
 int main() 
 {
-	char letter = 'A';
+	int number = 10;
+	
+	int result = (number > 11) ? 1 : 0;
 
-	if(letter == 'A')
-	{
-		cout<<"equals a\n";
-	}
-
-	string name = "C++";
-
-	if(name == "C++")
-	{
-		cout<<"equals C++\n";
-	}	
+	cout<<"The result is " << result;
 	
 	return 0;
 }
