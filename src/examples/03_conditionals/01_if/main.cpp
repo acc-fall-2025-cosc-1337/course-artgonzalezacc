@@ -7,20 +7,16 @@ using std::endl;
 
 int main() 
 {
-	//curly braces are optional for single statement blocks
-	//but it is a good practice to always use them
-	//this helps to avoid bugs when adding statements later
-	//and improves readability
-	if(false)
+	int num = 1;
+	
+	if(num > 0)
 	{
-		cout << "Condition is true" << endl;
-		cout << "Condition ???" << endl;
-	}
-	else
-	{
-		cout << "Condition is false" << endl;
+		int num = 10; //local variable to if block
+		cout<<"num: "<<num<<endl;
+		num  = num + 10;
 	}
 
-
+	cout<<"num: "<<num<<endl;
+	
 	return 0;
 }
