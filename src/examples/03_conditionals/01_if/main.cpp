@@ -1,22 +1,27 @@
 #include<iostream>
+#include<string>
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
 
 
 int main() 
 {
-	int num = 1;
-	
-	if(num > 0)
+	char letter = 'A';
+
+	if(letter == 'A')
 	{
-		int num = 10; //local variable to if block
-		cout<<"num: "<<num<<endl;
-		num  = num + 10;
+		cout<<"equals a\n";
 	}
 
-	cout<<"num: "<<num<<endl;
+	string name = "C++";
+
+	if(name == "C++")
+	{
+		cout<<"equals C++\n";
+	}	
 	
 	return 0;
 }
