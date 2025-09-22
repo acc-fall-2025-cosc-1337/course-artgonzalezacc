@@ -29,4 +29,11 @@ l
 0
 
 */
+void display(std::string str){
+    int i = 0;
+    while(i < str.length()){
+        std::cout << str[i] << std::endl;
+        i++;
+    }
+}
 
