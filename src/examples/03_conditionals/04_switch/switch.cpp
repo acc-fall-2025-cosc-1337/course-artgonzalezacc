@@ -1,6 +1,8 @@
 //write include statement for switch header
 #include "switch.h"
 
+using std::cout;
+
 //Write code for function that accepts a num and returns a string 
 //as follows:
 //returns 'Option 1' when value 1
@@ -31,5 +33,15 @@ std::string menu_option(int num)
             break;
     }
     return option;
+}
+
+void menu_options()
+{
+    cout<<"Menu Options\n";
+    cout<<"1. Option 1\n";
+    cout<<"2. Option 2\n";
+    cout<<"3. Option 3\n";
+    cout<<"4. Option 4\n";
+    cout<<"Select an option from the menu: ";
 }
 
