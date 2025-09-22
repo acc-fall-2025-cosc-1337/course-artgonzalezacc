@@ -3,7 +3,7 @@
 
 int main() 
 {
-	display("Hello");
+	prompt_user();
 
 	return 0;
 }

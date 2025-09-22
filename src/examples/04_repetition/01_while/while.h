@@ -8,4 +8,6 @@ int sum_of_squares(int number);
 //write function prototype named display that accepts a string and returns void
 void display(std::string str);
 
+void prompt_user();
+
 

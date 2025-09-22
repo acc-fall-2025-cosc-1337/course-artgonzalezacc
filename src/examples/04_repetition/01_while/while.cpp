@@ -37,3 +37,12 @@ void display(std::string str){
     }
 }
 
+void prompt_user()
+{
+    char cont = 'y';
+    while (cont == 'y' || cont == 'Y')
+    {
+        std::cout << "Continue? (y/n): ";
+        std::cin >> cont;
+    }
+}
