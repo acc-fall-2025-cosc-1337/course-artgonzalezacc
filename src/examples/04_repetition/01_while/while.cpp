@@ -3,6 +3,17 @@
 //the sum of all the squares of that number from 1 to the number. 
 //Example: sum_of_squares(4) 
 //1*1 + 2 * 2 + 3*3 + 4*4 = 30
+int sum_of_squares(int number){
+    int sum = 0;
+    
+    while(number > 0){
+        sum += number * number;
+        number--;
+    }
+
+    return sum;
+}
+
 
 
 //Using a while loop write code for display function that accepts a string and displays 
@@ -18,4 +29,20 @@ l
 0
 
 */
+void display(std::string str){
+    int i = 0;
+    while(i < str.length()){
+        std::cout << str[i] << std::endl;
+        i++;
+    }
+}
 
+void prompt_user()
+{
+    char cont = 'y';
+    while (cont == 'y' || cont == 'Y')
+    {
+        std::cout << "Continue? (y/n): ";
+        std::cin >> cont;
+    }
+}
