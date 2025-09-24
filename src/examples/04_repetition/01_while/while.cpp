@@ -46,3 +46,8 @@ void prompt_user()
         std::cin >> cont;
     }
 }
+
+bool is_vowel(char letter)
+{
+    return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+}

@@ -10,4 +10,6 @@ void display(std::string str);
 
 void prompt_user();
 
+bool is_vowel(char letter);
+
 
