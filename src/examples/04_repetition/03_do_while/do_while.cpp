@@ -6,7 +6,8 @@ using std::endl;
 
 //Write code for void function prompt_user to loop until
 //user opts not to continue. 
-void prompt_user() {
+void prompt_user_do() 
+{
     char choice;
     do 
     {
@@ -65,4 +66,18 @@ void handle_option(int option)
 void do_something()
 {
     cout << "Doing something..." << endl;
+}
+
+int sum_of_squares_do(int n) 
+{
+    int sum = 0;
+    int i = 0;
+    
+    do
+    {
+        sum += i * i;//sum = sum + i*i
+        i++;//i = i + 1
+    } while (i <= n);
+
+    return sum;
 }
