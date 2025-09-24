@@ -11,3 +11,18 @@ void display_even_numbers(int n)
     std::cout << std::endl; // Print a newline at the end
 }   // End of display_even_numbers
 
+void user_controlled_for_loop()
+{
+    int n;
+    std::cout << "Enter a positive integer: ";
+    std::cin >> n;
+
+    for(int i = 0; i < n; ++i) 
+    {
+        std::cout << i+1 << " ";
+    }
+    std::cout << std::endl;
+}
+
+ 
+
