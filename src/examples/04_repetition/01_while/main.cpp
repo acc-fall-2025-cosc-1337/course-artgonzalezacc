@@ -7,7 +7,7 @@ using std::endl;
 
 int main() 
 {
-	nested_while(5);
+	multiplication_table(10, 10);
 
 	return 0;
 }

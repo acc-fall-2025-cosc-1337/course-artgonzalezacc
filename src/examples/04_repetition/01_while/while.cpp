@@ -1,6 +1,8 @@
 #include "while.h"
 
 using std::cout;
+using std::endl;
+using std::setw;
 
 //Using a while loop write code for sum_of_squares function that accepts an int and returns  
 //the sum of all the squares of that number from 1 to the number. 
@@ -70,4 +72,20 @@ bool nested_while(int number)
         i++;
     }
     return true;
+}
+
+void multiplication_table(int rows, int cols)
+{
+    int i = 0;
+    while (i < rows)
+    {
+        int j = 0;
+        while (j < cols)
+        {
+            cout<<setw(4) << (i+1) * (j+1) ;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
 }
