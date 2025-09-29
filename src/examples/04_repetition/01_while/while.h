@@ -12,4 +12,6 @@ void prompt_user();
 
 bool is_vowel(char letter);
 
+bool nested_while(int number);
+
 
