@@ -1,4 +1,9 @@
 #include "while.h"
+
+using std::cout;
+using std::endl;
+using std::setw;
+
 //Using a while loop write code for sum_of_squares function that accepts an int and returns  
 //the sum of all the squares of that number from 1 to the number. 
 //Example: sum_of_squares(4) 
@@ -50,4 +55,37 @@ void prompt_user()
 bool is_vowel(char letter)
 {
     return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+}
+
+bool nested_while(int number)
+{
+    int i = 0;
+    while (i < number)
+    {   cout<<"Wait for inner loop to finish \n";
+        int j = 0;
+        while (j < i)
+        {
+            cout << "*";
+            j++;
+        }
+        std::cout << std::endl;
+        i++;
+    }
+    return true;
+}
+
+void multiplication_table(int rows, int cols)
+{
+    int i = 0;
+    while (i < rows)
+    {
+        int j = 0;
+        while (j < cols)
+        {
+            cout<<setw(4) << (i+1) * (j+1) ;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
 }
