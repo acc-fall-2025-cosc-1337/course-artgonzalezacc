@@ -5,7 +5,7 @@ using std::cout;
 void print(int &value)
 {
     auto num = 10;
-    value = num;
+    value = num * state_tax; // modify the argument passed by reference
 
-    cout << "Value of num: " << num << "\n";
+    cout << "Value of num: " << value << "\n";
 }

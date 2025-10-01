@@ -9,7 +9,9 @@ int main()
 
     print(num);//value = print.num   .... value references the address x1000 which is num
     
-    cout<<num;
+    cout<<num<<"\n";
+    cout<<10*state_tax<<"\n";//constant variable
+
     return 0;
 }
     
