@@ -11,3 +11,12 @@ void use_local_variable()
 
     cout<<"local var: "<<num<<"\n";
 }
+
+void use_static_variable()
+{
+    static auto num = 10;
+
+    num+= 1;
+
+    cout<<"static var: "<<num<<"\n";
+}

@@ -2,9 +2,9 @@
 
 int main()
 {
-    use_local_variable();
-    use_local_variable();
-    use_local_variable();
+    use_static_variable();
+    use_static_variable();
+    use_static_variable();
 
     return 0;
 }
