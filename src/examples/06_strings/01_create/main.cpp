@@ -6,61 +6,19 @@ using std::string;
 
 int main()
 {
-    string name = "C++";
-    cout<<name<<"\n";
+    string lang = "C++";
+    int num = 5;
+    int num1 = 5;
 
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
+    cout<<lang<<"\n";
+    cout<<"Address of lang: "<<&lang<<"\n";
+    cout<<"Address of num: "<<&num<<"\n";
+    cout<<"Address of num1: "<<&num1<<"\n\n";
 
-    name.append("i");
+    cout<<lang[0]<<"\n";
 
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
-
-    name.append("s");
-    name.append(" ");
-    name.append("c");
-    name.append("o");
-    name.append("o");
-    name.append("l");
-
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
-
-    name.append(" ");
-    name.append("c");
-    name.append("o");
-    name.append("o");
-    name.append("l");
-
-    cout<<name<<"\n";
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
-
-    name.append("!");
-
-    cout<<name<<"\n";
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
-
-    name.append(" ");
-    name.append("c");
-    name.append("o");
-    name.append("o");
-    name.append("l");
-    name.append(" ");
-    name.append("c");
-    name.append("o");
-    name.append("o");
-    name.append("l");
-    name.append(" ");
-    name.append("c");
-    name.append("o");
-    name.append("o");
-    name.append("l");
-
-    cout<<name<<"\n";
-    cout<<"size of string: "<<name.size()<<"\n";
-    cout<<"capacity of string: "<<name.capacity()<<"\n";
+    cout<<"Address of character at 0 index C: "<<static_cast<void*>(&lang[0])<<"\n";
+    cout<<"Address of character at 1 index +: "<<static_cast<void*>(&lang[1])<<"\n";
+    cout<<"Address of character at 2 index +: "<<static_cast<void*>(&lang[2])<<"\n";
     return 0;
 }
