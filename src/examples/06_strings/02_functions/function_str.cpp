@@ -10,7 +10,7 @@ void string_value_param(string lang) //will this be a copy parameter or direct a
         ch = '.';
     }
 
-    cout<<"outut: "<<lang<<"\n";
+    cout<<"output: "<<lang<<"\n";
 }
 
 void string_ref_param(std::string  &lang)
@@ -20,5 +20,15 @@ void string_ref_param(std::string  &lang)
         ch = '.';
     }
 
-    cout<<"outut: "<<lang<<"\n";
+    cout<<"output: "<<lang<<"\n";
+}
+
+void string_ref_param_ref_for(std::string  &lang)
+{
+    for(auto &ch: lang) //copy or direct access of a character in lang
+    {
+        ch = '.';
+    }
+
+    cout<<"output: "<<lang<<"\n";
 }
