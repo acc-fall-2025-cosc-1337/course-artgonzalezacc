@@ -6,19 +6,18 @@ using std::string;
 
 int main()
 {
-    string lang = "C++";
-    int num = 5;
-    int num1 = 5;
+    string s1; //empty string
+    s1.append("abc");
+    cout<<s1<<"\n\n";
 
-    cout<<lang<<"\n";
-    cout<<"Address of lang: "<<&lang<<"\n";
-    cout<<"Address of num: "<<&num<<"\n";
-    cout<<"Address of num1: "<<&num1<<"\n\n";
+    string s2("C++");
+    cout<<s2<<"\n\n";
 
-    cout<<lang[0]<<"\n";
+    string s3(9, 'a');
+    cout<<s3<<"\n\n";
 
-    cout<<"Address of character at 0 index C: "<<static_cast<void*>(&lang[0])<<"\n";
-    cout<<"Address of character at 1 index +: "<<static_cast<void*>(&lang[1])<<"\n";
-    cout<<"Address of character at 2 index +: "<<static_cast<void*>(&lang[2])<<"\n";
+    string s4("abcdefg", 3);
+    cout<<s4<<"\n\n";
+
     return 0;
 }
