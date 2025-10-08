@@ -6,18 +6,10 @@ using std::string;
 
 int main()
 {
-    string s1; //empty string
-    s1.append("abc");
-    cout<<s1<<"\n\n";
-
-    string s2("C++");
-    cout<<s2<<"\n\n";
-
-    string s3(9, 'a');
-    cout<<s3<<"\n\n";
-
-    string s4("abcdefg", 3);
-    cout<<s4<<"\n\n";
+    string lang = "C++";
+    cout<<lang[1]<<"\n\n";
+    lang[1] = '.';
+    cout<<lang[1]<<"\n";
 
     return 0;
 }
