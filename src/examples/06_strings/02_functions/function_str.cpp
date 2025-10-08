@@ -12,3 +12,13 @@ void string_value_param(string lang) //will this be a copy parameter or direct a
 
     cout<<"outut: "<<lang<<"\n";
 }
+
+void string_ref_param(std::string  &lang)
+{
+    for(auto ch: lang) //copy or direct access of a character in lang
+    {
+        ch = '.';
+    }
+
+    cout<<"outut: "<<lang<<"\n";
+}

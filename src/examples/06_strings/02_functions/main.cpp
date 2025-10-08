@@ -7,6 +7,7 @@ int main()
 {
     string lang = "C++";
     string_value_param(lang);
+    string_ref_param(lang);
 
     return 0;
 }
