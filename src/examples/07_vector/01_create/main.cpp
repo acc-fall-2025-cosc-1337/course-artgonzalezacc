@@ -1,34 +1,35 @@
 #include<iostream>
+#include<string>
 #include<vector>
 
 using std::cout;
+using std::string;
 using std::vector;
 
 int main()
 {
-    vector<int> nums;
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
-    
-    nums.push_back(1);
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
+    vector<double> doubles;
+    doubles.push_back(10.59);
+    doubles.push_back(21.99);
+    doubles.push_back(9.79);
 
-    nums.push_back(10);
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
+    cout<<doubles[0]<<"\n";
+    cout<<doubles[1]<<"\n";
+    cout<<doubles[2]<<"\n";
 
-    nums.push_back(5);
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
+    vector<string> strings;
+    string str = "C++";
+    strings.push_back(str);
+    str = "Python";
+    strings.push_back(str);
+    str = "Java";
+    strings.push_back(str);
+    str = "C#";
+    strings.push_back(str);
 
-    nums.push_back(15);
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
-
-    nums.push_back(20);
-    cout<<"size of vector: "<<nums.size()<<"\n";
-    cout<<"capacity of vector: "<<nums.capacity()<<"\n";
+    for(long unsigned int i=0; i < strings.size(); i++) {
+        cout<<strings[i]<<"\n";
+    }
 
     return 0;
 }
