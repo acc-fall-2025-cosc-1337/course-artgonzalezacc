@@ -20,3 +20,23 @@ void loop_vector_w_while()
     }
 
 }
+
+void loop_vector_w_for()
+{
+    vector<int> nums{10, 5, 7};
+
+    for(long unsigned int i=0; i < nums.size(); i++)
+    {
+        cout<<nums[i]<<"\n";
+    }
+}
+
+void loop_vector_w_for_range()
+{
+    vector<int> nums{10, 5, 8};
+
+    for(auto &num:nums) 
+    {
+        cout<<num<<"\n";
+    }
+}
