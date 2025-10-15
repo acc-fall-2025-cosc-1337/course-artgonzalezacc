@@ -6,16 +6,39 @@ using std::vector;
 
 int main()
 {
-    auto num = 5;
-    vector<int> nums{1, 5, 3};
+    vector<int> nums0;
+    nums0.push_back(5);
+    nums0.push_back(10);
+    nums0.push_back(3);
 
-    cout<<"Address of num: "<<&num<<"\n";
-    cout<<"Address of nums: "<<&nums<<"\n";
+    nums0[0] = 15; //[] works like the memory operator -direct memory access
 
-    cout<<nums[0]<<"\n";
-    cout<<"Address of number at index 0: "<<&nums[0]<<"\n";//gives us the address of value 1 in nums
-    cout<<"Address of number at index 1: "<<&nums[1]<<"\n";//gives us the address of value 5 in nums
-    cout<<"Address of number at index 0: "<<&nums[2]<<"\n";//gives us the address of value 3 in nums
+    for(auto &num: nums0)
+    {   
+        cout<<num<<"\n";
+    }
+
+    vector<int> nums1{1, 5, 3};
+    for(auto &num: nums1)
+    {
+        cout<<num<<"\n";
+    }
+
+    vector<int> nums2(5, 10);
+
+    for(auto &num: nums2)
+    {
+        cout<<num<<"\n";
+    }
+    
+    cout<<"\n";
+
+    vector<int> nums3 = nums2;
+
+    for(auto &num: nums3)
+    {
+        cout<<num<<"\n";
+    }
 
     return 0;
 }
