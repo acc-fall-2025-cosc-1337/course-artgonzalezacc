@@ -14,4 +14,4 @@ private:
 
 };
 
-void display_account_balance(BankAccount &account);
+void display_account_balance(const BankAccount &account);

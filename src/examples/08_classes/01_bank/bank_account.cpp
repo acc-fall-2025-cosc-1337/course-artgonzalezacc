@@ -3,7 +3,7 @@
 
 using std::cout;
 
-void display_account_balance(BankAccount &account)
+void display_account_balance(const BankAccount &account)
 {
     cout<<"Display account balance: "<<account.get_balance()<<"\n";
 }
