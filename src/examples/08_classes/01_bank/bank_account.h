@@ -15,3 +15,4 @@ private:
 };
 
 void display_account_balance(const BankAccount &account);
+BankAccount get_account(int balance);

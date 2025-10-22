@@ -12,3 +12,10 @@ TEST_CASE("test get balance")
 	BankAccount account(500);//create a variable---> create an object
 	REQUIRE(500 == account.get_balance());
 }
+
+TEST_CASE("test get account function")
+{
+	int begin_balance = 250;
+	BankAccount account = get_account(begin_balance);
+	REQUIRE(account.get_balance() == begin_balance);
+}
