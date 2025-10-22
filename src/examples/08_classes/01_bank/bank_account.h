@@ -1,6 +1,9 @@
 //bank_account.h
 #include<iostream>
 
+#ifndef BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H
+
 class BankAccount
 {
     //variables and functions go here
@@ -16,3 +19,5 @@ private:
 
 void display_account_balance(const BankAccount &account);
 BankAccount get_account(int balance);
+
+#endif
