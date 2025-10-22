@@ -8,6 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("test get balance") 
 {
-	BankAccount account;//create a variable---> create an object
-	REQUIRE(0 == account.get_balance());
+	BankAccount account0;
+	BankAccount account(500);//create a variable---> create an object
+	REQUIRE(500 == account.get_balance());
 }
