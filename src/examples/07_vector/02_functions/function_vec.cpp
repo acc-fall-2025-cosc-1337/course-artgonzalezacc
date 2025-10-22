@@ -40,3 +40,8 @@ void loop_vector_w_for_range()
         cout<<num<<"\n";
     }
 }
+
+void use_vector_ref_param(std::vector<int> &nums)
+{
+    nums[0]  = -1;
+}
