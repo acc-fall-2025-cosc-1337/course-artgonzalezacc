@@ -3,11 +3,24 @@
 
 using std::cout;
 
+/**
+ Class method/function
+ */
+void BankAccount::deposit(int amount)
+{
+    if(amount > 0) 
+    {
+        balance += amount;
+    }
+}
+
+/*FREE FUNCTION*/
 void display_account_balance(const BankAccount &account)
 {
     cout<<"Display account balance: "<<account.get_balance()<<"\n";
 }
 
+/*FREE FUNCTION*/
 BankAccount get_account(int balance)
 {
     BankAccount account(balance);

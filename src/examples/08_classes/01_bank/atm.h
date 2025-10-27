@@ -9,9 +9,10 @@ class ATM
 public:
     ATM(BankAccount a) : account(a) {/**empty code block */}
     void display_balance() { std::cout<<"Balance: "<<account.get_balance()<<"\n";};
+    void make_deposit();
 
 private:
-    BankAccount account;
+    BankAccount& account;
 };
 
 

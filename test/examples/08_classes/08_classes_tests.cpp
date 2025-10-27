@@ -19,3 +19,28 @@ TEST_CASE("test get account function")
 	BankAccount account = get_account(begin_balance);
 	REQUIRE(account.get_balance() == begin_balance);
 }
+
+TEST_CASE("test deposit with positive amount") 
+{
+	int begin_balance = 500;
+
+	BankAccount account(begin_balance);
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.deposit(50);
+
+	REQUIRE(550 == account.get_balance());
+}
+
+TEST_CASE("test deposit with negative amount")
+{
+	int begin_balance = 500;
+	BankAccount account(begin_balance);
+
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.deposit(-50);
+
+	REQUIRE(begin_balance == account.get_balance());
+}
+
