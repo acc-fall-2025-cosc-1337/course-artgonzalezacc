@@ -1,8 +1,10 @@
 #include "atm.h"
 #include "bank_account.h"
+#include <ctime>   // For time()
 
 int main()
 {
+	BankAccount account0;
 	BankAccount account(150);
 	display_account_balance(account);
 

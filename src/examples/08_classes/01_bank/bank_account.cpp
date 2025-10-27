@@ -22,6 +22,11 @@ void BankAccount::withdraw(int amount)
     }
 }
 
+void BankAccount::initialize_balance()
+{
+    balance = (rand() % 10000) + 1;
+}
+
 
 /*FREE FUNCTION*/
 void display_account_balance(const BankAccount &account)

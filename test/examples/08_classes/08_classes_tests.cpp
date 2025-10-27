@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "bank_account.h"
+#include <ctime>   // For time()
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -94,4 +95,13 @@ TEST_CASE("test withdraw and deposit amount")
 
 	account.deposit(100);
 	REQUIRE(begin_balance == account.get_balance());
+}
+
+TEST_CASE("test account private function initialize balance")
+{
+	srand(static_cast<unsigned int>(time(0)));
+	BankAccount account;
+
+	REQUIRE(account.get_balance() >= 1);
+	REQUIRE(account.get_balance() <= 10000);
 }
