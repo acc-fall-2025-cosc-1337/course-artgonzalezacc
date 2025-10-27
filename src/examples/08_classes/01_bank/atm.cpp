@@ -12,3 +12,12 @@ void ATM::make_deposit()
 
     account.deposit(amount);
 }
+
+void ATM::make_withdraw()
+{
+    auto amount = 0;
+    cout<<"Enter withdraw amount: ";
+    cin>>amount;
+
+    account.withdraw(amount);
+}

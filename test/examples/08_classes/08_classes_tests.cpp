@@ -44,3 +44,55 @@ TEST_CASE("test deposit with negative amount")
 	REQUIRE(begin_balance == account.get_balance());
 }
 
+TEST_CASE("test withdraw positive amount; amount lt balance") 
+{
+	int begin_balance = 500;
+	BankAccount account(begin_balance);
+
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.withdraw(100);
+	REQUIRE(400 == account.get_balance());
+}
+
+TEST_CASE("test withdraw with negative amout")
+{
+	int begin_balance = 500;
+	BankAccount account(begin_balance);
+
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.withdraw(-100);
+
+	REQUIRE(begin_balance == account.get_balance());
+}
+
+TEST_CASE("test deposit and withdraw amount")
+{
+	int begin_balance = 500;
+	BankAccount account(begin_balance);
+
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.deposit(100);
+
+	REQUIRE(600 == account.get_balance());
+
+	account.withdraw(100);
+
+	REQUIRE(begin_balance == account.get_balance());
+}
+
+TEST_CASE("test withdraw and deposit amount")
+{
+	int begin_balance = 500;
+	BankAccount account(begin_balance);
+
+	REQUIRE(begin_balance == account.get_balance());
+
+	account.withdraw(100);
+	REQUIRE(400 == account.get_balance());
+
+	account.deposit(100);
+	REQUIRE(begin_balance == account.get_balance());
+}

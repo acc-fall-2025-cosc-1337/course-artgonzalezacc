@@ -12,6 +12,7 @@ public:
     BankAccount(int b) : balance(b) {/**empty class function code block */}
     int get_balance() const { return balance; }
     void deposit(int amount);
+    void withdraw(int amount);
 
 private:
     int balance; //default value is 0

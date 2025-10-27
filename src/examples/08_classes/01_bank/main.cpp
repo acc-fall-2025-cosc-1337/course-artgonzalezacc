@@ -16,5 +16,11 @@ int main()
 
 	atm.display_balance();
 
+	atm.make_withdraw();
+
+	display_account_balance(account);
+
+	atm.display_balance();
+
 	return 0;
 }
