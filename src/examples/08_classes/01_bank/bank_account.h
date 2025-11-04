@@ -1,6 +1,5 @@
 //bank_account.h
 #include<iostream>
-#include <cstdlib> // For rand() and srand()
 
 
 #ifndef BANK_ACCOUNT_H
@@ -10,7 +9,7 @@ class BankAccount
 {
     //variables and functions go here
 public:
-    BankAccount(){initialize_balance();}//default constructor 
+    BankAccount(){}//default constructor 
     BankAccount(int b) : balance(b) {/**empty class function code block */}
     int get_balance() const { return balance; }
     void deposit(int amount);
@@ -18,7 +17,6 @@ public:
 
 private:
     int balance; //default value is 0
-    void initialize_balance();
 
 };
 
