@@ -1,28 +1,29 @@
 #include "atm.h"
 #include "bank_account.h"
+#include "bank_account_db.h"
 #include <ctime>   // For time()
+
+using std::vector;
 
 int main()
 {
-	BankAccount account0;
-	BankAccount account(150);
+	srand(static_cast<unsigned int>(time(0)));
+	BankAccountDB db;
+	BankAccount account(db.get_balance());
+	vector<BankAccount&> accounts;
+	accounts.push_back(account);
+	
+	BankAccount account1(db.get_balance());
+	accounts.push_back(account1);
+
+	BankAccount account2(db.get_balance());
+	accounts.push_back(account2);
+
+	ATM atm(accounts);
+
+	run_menu(atm);
+
 	display_account_balance(account);
-
-	ATM atm(account);
-
-	atm.display_balance();
-
-	atm.make_deposit();
-
-	display_account_balance(account);
-
-	atm.display_balance();
-
-	atm.make_withdraw();
-
-	display_account_balance(account);
-
-	atm.display_balance();
 
 	return 0;
 }
