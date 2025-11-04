@@ -1,28 +1,19 @@
 #include "atm.h"
 #include "bank_account.h"
+#include "bank_account_db.h"
 #include <ctime>   // For time()
 
 int main()
 {
-	BankAccount account0;
-	BankAccount account(150);
-	display_account_balance(account);
+	srand(static_cast<unsigned int>(time(0)));
+	BankAccountDB db;
+	BankAccount account(db.get_balance());
 
 	ATM atm(account);
 
-	atm.display_balance();
-
-	atm.make_deposit();
+	run_menu(atm);
 
 	display_account_balance(account);
-
-	atm.display_balance();
-
-	atm.make_withdraw();
-
-	display_account_balance(account);
-
-	atm.display_balance();
 
 	return 0;
 }

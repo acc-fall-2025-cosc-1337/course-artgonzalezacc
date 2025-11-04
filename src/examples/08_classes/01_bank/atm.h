@@ -16,5 +16,8 @@ private:
     BankAccount& account;
 };
 
+void display_menu();
+void run_menu(ATM &atm);
+void handle_user_choice(int choice, ATM &atm);
 
 #endif
