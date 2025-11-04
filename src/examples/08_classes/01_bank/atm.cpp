@@ -4,12 +4,25 @@
 using std::cin;
 using std::cout;
 
+ATM::ATM(std::vector<BankAccount&>& a) 
+: accounts(a) 
+{
+    account_index = 0;
+}
+
+void ATM::display_balance()
+{
+    BankAccount& account = accounts[account_index];
+    cout<<"Balance: "<<account.get_balance();
+}
+
 void ATM::make_deposit()
 {
     auto amount = 0;
     cout<<"Enter deposit amount: ";
     cin>>amount;
 
+    BankAccount& account = accounts[account_index];
     account.deposit(amount);
 }
 
@@ -19,6 +32,7 @@ void ATM::make_withdraw()
     cout<<"Enter withdraw amount: ";
     cin>>amount;
 
+    BankAccount& account = accounts[account_index];
     account.withdraw(amount);
 }
 

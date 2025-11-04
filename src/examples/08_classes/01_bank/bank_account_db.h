@@ -6,8 +6,8 @@
 class BankAccountDB
 {
 public:
-    BankAccountDB(){initialize_balance();}
-    int get_balance()const{return balance;}
+    BankAccountDB(){}
+    int get_balance() {initialize_balance(); return balance;}
 
 private:
     void initialize_balance();
