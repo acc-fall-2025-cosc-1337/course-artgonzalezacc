@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "bank_account.h"
 #include "checking_account.h"
+#include "savings_account.h"
 #include "bank_account_db.h"
 #include <ctime>   // For time()
 
@@ -16,6 +17,18 @@ TEST_CASE("test get balance")
 
 	CheckingAccount account1(500);//create a variable---> create an object
 	REQUIRE(500 == account1.get_balance());
+}
+
+TEST_CASE("test savings get balance")
+{
+	SavingsAccount account;
+	REQUIRE(0 == account.get_balance());
+}
+
+TEST_CASE("test savings get balance w value")
+{
+	SavingsAccount account(500);
+	REQUIRE(500 == account.get_balance());
 }
 
 TEST_CASE("test get account function")
