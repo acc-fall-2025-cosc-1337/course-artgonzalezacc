@@ -16,7 +16,7 @@ public:
     void withdraw(int amount);
 
 private:
-    int balance; //default value is 0
+    int balance{0}; //default value is 0
 
 };
 

@@ -13,6 +13,9 @@ TEST_CASE("test get balance")
 {
 	CheckingAccount account;//create a variable---> create an object
 	REQUIRE(0 == account.get_balance());
+
+	CheckingAccount account1(500);//create a variable---> create an object
+	REQUIRE(500 == account1.get_balance());
 }
 
 TEST_CASE("test get account function")

@@ -6,7 +6,9 @@
 
 class CheckingAccount : public BankAccount
 {
-
+public:    
+    CheckingAccount(){}
+    CheckingAccount(int b) : BankAccount(b){}
 };
 
 #endif
