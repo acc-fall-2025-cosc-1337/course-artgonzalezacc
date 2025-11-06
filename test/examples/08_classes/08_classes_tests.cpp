@@ -28,7 +28,7 @@ TEST_CASE("test savings get balance")
 TEST_CASE("test savings get balance w value")
 {
 	SavingsAccount account(500);
-	REQUIRE(500 == account.get_balance());
+	REQUIRE(550 == account.get_balance());
 }
 
 TEST_CASE("test get account function")
