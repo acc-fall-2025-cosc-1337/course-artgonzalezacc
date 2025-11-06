@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "bank_account.h"
+#include "checking_account.h"
+#include "savings_account.h"
 #include "bank_account_db.h"
 #include <ctime>   // For time()
 
@@ -10,8 +12,23 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("test get balance") 
 {
-	BankAccount account(500);//create a variable---> create an object
-	REQUIRE(500 == account.get_balance());
+	CheckingAccount account;//create a variable---> create an object
+	REQUIRE(0 == account.get_balance());
+
+	CheckingAccount account1(500);//create a variable---> create an object
+	REQUIRE(500 == account1.get_balance());
+}
+
+TEST_CASE("test savings get balance")
+{
+	SavingsAccount account;
+	REQUIRE(0 == account.get_balance());
+}
+
+TEST_CASE("test savings get balance w value")
+{
+	SavingsAccount account(500);
+	REQUIRE(550 == account.get_balance());
 }
 
 TEST_CASE("test get account function")

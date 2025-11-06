@@ -4,7 +4,7 @@
 using std::cin;
 using std::cout;
 
-ATM::ATM(std::vector<BankAccount&>& a) 
+ATM::ATM(std::vector<BankAccount>& a) 
 : accounts(a) 
 {
     account_index = 0;
@@ -43,6 +43,7 @@ void display_menu()
     cout<<"1-Display Balance\n";
     cout<<"2-Make Deposit\n";
     cout<<"3-Make Withdraw\n";
+    cout<<"4-Exit\n";
 }
 
 void run_menu(ATM &atm)
