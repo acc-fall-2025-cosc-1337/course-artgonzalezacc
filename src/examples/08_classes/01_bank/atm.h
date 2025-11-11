@@ -8,13 +8,13 @@
 class ATM
 {
 public:
-    ATM(std::vector<BankAccount>& a);
+    ATM(std::vector<BankAccount*>& a);
     void display_balance();
     void make_deposit();
     void make_withdraw();
 
 private:
-    std::vector<BankAccount> accounts;
+    std::vector<BankAccount*> accounts;
     int account_index;
 };
 
