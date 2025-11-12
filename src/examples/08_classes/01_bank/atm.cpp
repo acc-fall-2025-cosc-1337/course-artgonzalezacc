@@ -4,7 +4,7 @@
 using std::cin;
 using std::cout;
 
-ATM::ATM(std::vector<BankAccount>& a) 
+ATM::ATM(std::vector<BankAccount*>& a) 
 : accounts(a) 
 {
     account_index = 0;
@@ -12,8 +12,8 @@ ATM::ATM(std::vector<BankAccount>& a)
 
 void ATM::display_balance()
 {
-    BankAccount& account = accounts[account_index];
-    cout<<"Balance: "<<account.get_balance();
+    BankAccount* account = accounts[account_index];
+    cout<<"Balance: "<<account->get_balance();
 }
 
 void ATM::make_deposit()
@@ -22,8 +22,8 @@ void ATM::make_deposit()
     cout<<"Enter deposit amount: ";
     cin>>amount;
 
-    BankAccount& account = accounts[account_index];
-    account.deposit(amount);
+    BankAccount* account = accounts[account_index];
+    account->deposit(amount);
 }
 
 void ATM::make_withdraw()
@@ -32,8 +32,8 @@ void ATM::make_withdraw()
     cout<<"Enter withdraw amount: ";
     cin>>amount;
 
-    BankAccount& account = accounts[account_index];
-    account.withdraw(amount);
+    BankAccount* account = accounts[account_index];
+    account->withdraw(amount);
 }
 
 //FREE FUNCTIONS

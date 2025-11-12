@@ -11,12 +11,15 @@ int main()
 {
 	srand(static_cast<unsigned int>(time(0)));
 	BankAccountDB db;
-	vector<BankAccount> accounts;
-	accounts.push_back(SavingsAccount(db.get_balance()));
+	vector<BankAccount*> accounts;
+	SavingsAccount savings0 = SavingsAccount(db.get_balance());
+	accounts.push_back(&savings0);
 	
-	accounts.push_back(SavingsAccount(db.get_balance()));
+	SavingsAccount savings1 = SavingsAccount(db.get_balance());
+	accounts.push_back(&savings1);
 
-	accounts.push_back(CheckingAccount(db.get_balance()));
+	CheckingAccount checking = CheckingAccount(db.get_balance());
+	accounts.push_back(&checking);
 
 	ATM atm(accounts);
 
