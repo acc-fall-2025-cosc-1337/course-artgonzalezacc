@@ -4,22 +4,21 @@
 #include "savings_account.h"
 #include "bank_account_db.h"
 #include <ctime>   // For time()
+#include<memory>
 
+using std::cout;
+using std::unique_ptr; using std::make_unique;
 using std::vector;
 
 int main()
 {
 	srand(static_cast<unsigned int>(time(0)));
 	BankAccountDB db;
-	BankAccount* ptr_account;	
-	
-	CheckingAccount checking(db.get_balance());//object (it's a variable)
-	ptr_account = &checking; //pointers work with addresses
-	std::cout<<ptr_account->get_balance()<<"\n";
+	unique_ptr<BankAccount> uptr_account = make_unique<CheckingAccount>	(db.get_balance());
+	cout<<"Balance: "<<uptr_account->get_balance()<<"\n";
 
-	SavingsAccount savings(db.get_balance());
-	ptr_account = &savings;
-	std::cout<<ptr_account->get_balance()<<"\n";
+	unique_ptr<BankAccount> savings = make_unique<SavingsAccount>(db.get_balance());
+	cout<<"Balance: "<<savings->get_balance()<<"\n";
 
 	/*vector<BankAccount*> accounts;
 	SavingsAccount savings0 = SavingsAccount(db.get_balance());
