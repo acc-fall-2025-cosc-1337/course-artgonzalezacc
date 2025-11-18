@@ -14,25 +14,17 @@ int main()
 {
 	srand(static_cast<unsigned int>(time(0)));
 	BankAccountDB db;
-	unique_ptr<BankAccount> uptr_account = make_unique<CheckingAccount>	(db.get_balance());
-	cout<<"Balance: "<<uptr_account->get_balance()<<"\n";
 
-	unique_ptr<BankAccount> savings = make_unique<SavingsAccount>(db.get_balance());
-	cout<<"Balance: "<<savings->get_balance()<<"\n";
-
-	/*vector<BankAccount*> accounts;
-	SavingsAccount savings0 = SavingsAccount(db.get_balance());
-	accounts.push_back(&savings0);
+	vector<unique_ptr<BankAccount>> accounts;
+	accounts.push_back(make_unique<SavingsAccount>(db.get_balance()));
 	
-	SavingsAccount savings1 = SavingsAccount(db.get_balance());
-	accounts.push_back(&savings1);
+	accounts.push_back(make_unique<SavingsAccount>(db.get_balance()));
 
-	CheckingAccount checking = CheckingAccount(db.get_balance());
-	accounts.push_back(&checking);
+	accounts.push_back(make_unique<CheckingAccount>(db.get_balance()));
 
 	ATM atm(accounts);
 
-	run_menu(atm);*/
+	run_menu(atm);
 
 	return 0;
 }
