@@ -12,16 +12,22 @@ iterate with auto
 */
 
 using std::unique_ptr; using std::make_unique;
+using std::vector;
 
 int main() 
 {
+	vector<unique_ptr<Shape>> shapes;
+
 	unique_ptr<Shape> shape = make_unique<Circle>();
+	shapes.push_back(std::move(shape));//shape is not pointing to valid data
 
-	shape->draw();
+	shape = make_unique<Line>();//create new heap data
+	shapes.push_back(std::move(shape));//shape is not pointing to valid data
 
-	shape = make_unique<Line>();
-
-	shape->draw();
+	for(auto& shape: shapes)	
+	{
+		shape->draw();
+	}
 
 	return 0;
 }
