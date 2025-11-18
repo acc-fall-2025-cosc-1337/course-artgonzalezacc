@@ -11,7 +11,7 @@ class BankAccount
 public:
     BankAccount(){}//default constructor 
     BankAccount(int b) : balance(b) {/**empty class function code block */}
-    int get_balance() const { return balance; }
+    virtual int get_balance() const { return balance; }
     void deposit(int amount);
     void withdraw(int amount);
 

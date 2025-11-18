@@ -1,6 +1,7 @@
 //atm.h
 #include "bank_account.h"
 #include <vector>
+#include<memory>
 
 #ifndef ATM_H
 #define ATM_H
@@ -8,13 +9,13 @@
 class ATM
 {
 public:
-    ATM(std::vector<BankAccount*>& a);
+    ATM(std::vector<std::unique_ptr<BankAccount>>& a);
     void display_balance();
     void make_deposit();
     void make_withdraw();
 
 private:
-    std::vector<BankAccount*> accounts;
+    std::vector<std::unique_ptr<BankAccount>>& accounts;
     int account_index;
 };
 
