@@ -11,17 +11,17 @@ Create vector of Shape pointers
 iterate with auto
 */
 
+using std::unique_ptr; using std::make_unique;
+
 int main() 
 {
-	Shape* shape;//pointer
-	shape = new Circle();//create dynamic memory on the heap
+	unique_ptr<Shape> shape = make_unique<Circle>();
+
 	shape->draw();
 
-	delete shape;
+	shape = make_unique<Line>();
 
-	shape = new Line();
 	shape->draw();
 
-	delete shape;
 	return 0;
 }
