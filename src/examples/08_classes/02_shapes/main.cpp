@@ -13,6 +13,15 @@ iterate with auto
 
 int main() 
 {
+	Shape* shape;//pointer
+	shape = new Circle();//create dynamic memory on the heap
+	shape->draw();
 
+	delete shape;
+
+	shape = new Line();
+	shape->draw();
+
+	delete shape;
 	return 0;
 }
