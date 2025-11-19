@@ -14,3 +14,27 @@ void create_stack_array()
     cout<<"Value: "<<nums[2]<<" Address: "<<&nums[2]<<"\n";
 
 }
+
+void arrays_and_pointers() //the name of a stack array is a pointer(behind scenes)
+{
+    const int SIZE = 3;
+    int nums[SIZE]{6, 1, 10};
+    cout<<nums<<"\n";
+    
+    int* num_ptr = nums;
+
+    cout<<*num_ptr<<"\n";
+
+    *num_ptr++; //jump 4 addresses (int is 4 bytes)
+
+    cout<<*num_ptr<<"\n";
+
+    *num_ptr++; //jump 4 addresses (int is 4 bytes)
+
+    cout<<*num_ptr<<"\n";
+
+    *num_ptr--; //jump 4 addresses (int is 4 bytes)
+
+    cout<<*num_ptr<<"\n";
+
+}
