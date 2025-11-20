@@ -1,6 +1,7 @@
 #include "dynamic_memory.h"
 
 using std::cout;
+using std::shared_ptr;
 
 void use_dynamic_memory_array(const int SIZE)
 {
@@ -28,4 +29,16 @@ void delete_dynamic_memory(int* array)
     cout<<"Deleting memory at: "<<array<<"\n";
 
     delete[] array;
+}
+
+void use_dynamic_memory_shared_ptr(const int SIZE)
+{
+    shared_ptr<int[]>nums(get_dynamic_memory(SIZE), delete_dynamic_memory);
+    nums[0] = 6;
+    nums[1] = 1;
+    nums[2] = 10;
+
+    cout<<nums[0]<<"\n";
+
+    cout<<"Exiting dynamic memory share ptr function...\n";
 }
