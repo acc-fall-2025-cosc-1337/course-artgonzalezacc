@@ -46,3 +46,11 @@ void display_array_via_pointer(int* array, const int SIZE)
         cout<<array[i]<<"\n";
     }
 }
+
+int* array_return_value()
+{
+    const int SIZE = 3;//created when function loads/removed when function unloads -- STACK
+    int nums[SIZE]{6, 1, 10};//created when function loads/removed when function unloads -- STACK
+    
+    return nums;
+}

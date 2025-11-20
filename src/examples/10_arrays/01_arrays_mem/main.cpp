@@ -1,11 +1,11 @@
 #include "arrays_mem.h"
 
+using std::cout;
+
 int main() 
 {
-	const int SIZE = 3;
-    int nums[SIZE]{6, 1, 10};
-	
-	display_array_via_pointer(nums, SIZE);
+	int* pointer = array_return_value();
+	cout<<*pointer<<"\n";
 
 	return 0;
 
