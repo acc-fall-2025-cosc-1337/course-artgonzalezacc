@@ -38,3 +38,11 @@ void arrays_and_pointers() //the name of a stack array is a pointer(behind scene
     cout<<*num_ptr<<"\n";
 
 }
+
+void display_array_via_pointer(int* array, const int SIZE)
+{
+    for(auto i=0; i < SIZE; i++)
+    {
+        cout<<array[i]<<"\n";
+    }
+}
