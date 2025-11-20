@@ -1,25 +1,10 @@
-#include<iostream>
-#include<memory>
+#include "dynamic_memory.h"
 
 using std::cout;
-using std::shared_ptr; using std::make_shared;
-using std::weak_ptr;
 
 int main() 
 {
-	shared_ptr<int> num = make_shared<int>(150);//creates dynamic memory on the heap
-	cout<<*num<<"\n";//use
-	cout<<"count: "<<num.use_count()<<"\n";
+	use_dynamic_memory_shared_ptr(3);
 	
-	weak_ptr<int> wp_num = num;
-	cout<<"count: "<<num.use_count()<<"\n";
-
-	if(!wp_num.expired())
-	{
-		shared_ptr<int> sp1 = wp_num.lock();
-		cout<<*sp1<<"\n";
-	}
-
-	//unique ptr calls delete for us(right before main is removed from memory)
 	return 0;
 }
