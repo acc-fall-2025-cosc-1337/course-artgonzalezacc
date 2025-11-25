@@ -10,6 +10,8 @@ class MyVector
 public:
     MyVector(); //blank/empty  list
     MyVector(int s); //a list of size s
+    int& operator[](int index){return elements[index];}
+    int& operator[](int index) const {return elements[index];}
     ~MyVector();//destructor
 private:
     int size;
