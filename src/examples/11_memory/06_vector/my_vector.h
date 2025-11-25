@@ -10,6 +10,7 @@ class MyVector
 public:
     MyVector(); //blank/empty  list
     MyVector(int s); //a list of size s
+    MyVector(const MyVector& v1);//copy constructor
     int& operator[](int index){return elements[index];}
     int& operator[](int index) const {return elements[index];}
     ~MyVector();//destructor

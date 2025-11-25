@@ -14,6 +14,17 @@ MyVector::MyVector(int s)
     cout<<"Created elements memory at: "<<elements<<"\n";
 }
 
+MyVector::MyVector(const MyVector& v1)
+: size(v1.size), capacity(v1.capacity), elements{new int[v1.size]} //deep copy
+{
+    cout<<"Constructor MyVector(const MyVector& v1) created memory at: "<<elements<<"\n";
+
+    for(auto i=0; i < size; i++)
+    {
+        elements[i] = v1.elements[i];
+    }
+}
+
 MyVector::~MyVector()
 {
     cout<<"Free memory at : "<<elements<<"\n";
