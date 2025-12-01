@@ -55,6 +55,21 @@ MyVector& MyVector::operator=(const MyVector& v1)
     return *this;
 }
 
+/*
+1-Get v1.elements memory(switch/steal the data and make v1 empty)
+2-Get size from v1
+3-point v1.elements to nothing(nullptr)
+4-set v1 size to 0
+*/
+MyVector::MyVector(MyVector&& v1)
+: size{v1.size}, elements{v1.elements}
+{
+    cout<<"Move constructor - memory pointer switched from v1 to v1 "<<elements<<"\n";
+    v1.elements = nullptr;
+    v1.size = 0;
+    v1.capacity = 0;
+}
+
 MyVector::~MyVector()
 {
     cout<<"Free memory at : "<<elements<<"\n";

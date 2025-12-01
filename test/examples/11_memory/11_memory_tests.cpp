@@ -24,13 +24,19 @@ TEST_CASE("Test class shallow copy")
 {
 	MyVector v1(3);
 	MyVector v2 = v1;//want to copy all the variables from v1 to v2
-}*/
+}
 
 TEST_CASE("Test class copy assignment")
 {
 	MyVector v1(3);
 	MyVector v2(3);
 	v2 = v1;
+}*/
+
+TEST_CASE("Test my vector overwite with std::move")
+{
+	MyVector v1(3); //get memory for 3 elements in list
+	MyVector v2 = std::move(v1); //invalidate v1, get v1's memory
 }
 
 
