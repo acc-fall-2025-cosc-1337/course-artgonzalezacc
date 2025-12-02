@@ -16,11 +16,15 @@ public:
     MyVector& operator=(MyVector&& v1);//Rule 5 of 5 move assignment 
     int& operator[](int index){return elements[index];}
     int& operator[](int index) const {return elements[index];}
+    void PushBack(int value);
     ~MyVector();//destructor Rule 3
 private:
     int size;
     int capacity;
     int* elements; //point to something eventually
+    const int RESERVE_DEFAULT_SIZE{8};
+    const int RESERVE_DEFAULT_MULTIPILER{2};
+    void Reserve(int new_size);
 
 };
 
