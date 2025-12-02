@@ -1,8 +1,24 @@
 #include "while.h"
+
+using std::cout;
+using std::endl;
+using std::setw;
+
 //Using a while loop write code for sum_of_squares function that accepts an int and returns  
 //the sum of all the squares of that number from 1 to the number. 
 //Example: sum_of_squares(4) 
 //1*1 + 2 * 2 + 3*3 + 4*4 = 30
+int sum_of_squares(int number){
+    int sum = 0;
+    
+    while(number > 0){
+        sum += number * number;
+        number--;
+    }
+
+    return sum;
+}
+
 
 
 //Using a while loop write code for display function that accepts a string and displays 
@@ -18,4 +34,58 @@ l
 0
 
 */
+void display(std::string str){
+    int i = 0;
+    while(i < str.length()){
+        std::cout << str[i] << std::endl;
+        i++;
+    }
+}
 
+void prompt_user()
+{
+    char cont = 'y';
+    while (cont == 'y' || cont == 'Y')
+    {
+        std::cout << "Continue? (y/n): ";
+        std::cin >> cont;
+    }
+}
+
+bool is_vowel(char letter)
+{
+    return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+}
+
+bool nested_while(int number)
+{
+    int i = 0;
+    while (i < number)
+    {   cout<<"Wait for inner loop to finish \n";
+        int j = 0;
+        while (j < i)
+        {
+            cout << "*";
+            j++;
+        }
+        std::cout << std::endl;
+        i++;
+    }
+    return true;
+}
+
+void multiplication_table(int rows, int cols)
+{
+    int i = 0;
+    while (i < rows)
+    {
+        int j = 0;
+        while (j < cols)
+        {
+            cout<<setw(4) << (i+1) * (j+1) ;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}

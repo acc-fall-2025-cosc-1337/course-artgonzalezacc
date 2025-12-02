@@ -1,8 +1,20 @@
 #include<string>
+#include<iostream>
+#include<iomanip>
 
 //Write function prototype named sum_of_squares that accepts an int and returns an int.
+int sum_of_squares(int number);
 
 
 //write function prototype named display that accepts a string and returns void
+void display(std::string str);
+
+void prompt_user();
+
+bool is_vowel(char letter);
+
+bool nested_while(int number);
+
+void multiplication_table(int rows, int cols);
 
 
