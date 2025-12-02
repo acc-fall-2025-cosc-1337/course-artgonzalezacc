@@ -31,12 +31,18 @@ TEST_CASE("Test class copy assignment")
 	MyVector v1(3);
 	MyVector v2(3);
 	v2 = v1;
-}*/
+}
 
 TEST_CASE("Test my vector overwite with std::move")
 {
 	MyVector v1(3); //get memory for 3 elements in list
 	MyVector v2 = std::move(v1); //invalidate v1, get v1's memory
+}*/
+
+TEST_CASE("Create v2 from function get_vector return value")
+{
+	MyVector v2(3);// memory created for v2
+	v2 = get_vector();//overwrite v2 memory(freeing memory for v2 first)
 }
 
 
