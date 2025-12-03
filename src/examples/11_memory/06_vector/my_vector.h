@@ -17,6 +17,8 @@ public:
     int& operator[](int index){return elements[index];}
     int& operator[](int index) const {return elements[index];}
     void PushBack(int value);
+    int Size() const {return size;}
+    int Capacity()const {return capacity;}
     ~MyVector();//destructor Rule 3
 private:
     int size;

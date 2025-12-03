@@ -37,12 +37,34 @@ TEST_CASE("Test my vector overwite with std::move")
 {
 	MyVector v1(3); //get memory for 3 elements in list
 	MyVector v2 = std::move(v1); //invalidate v1, get v1's memory
-}*/
+}
 
 TEST_CASE("Create v2 from function get_vector return value")
 {
 	MyVector v2(3);// memory created for v2
 	v2 = get_vector();//overwrite v2 memory(freeing memory for v2 first)
+}*/
+
+TEST_CASE("Test push back my vector")
+{
+	MyVector v1(3);
+	REQUIRE(0 == v1.Size());
+	REQUIRE(3 == v1.Capacity());
+
+	v1.PushBack(5);//???
+	REQUIRE(5 == v1[0]);
+	REQUIRE(1 == v1.Size());
+	REQUIRE(3 == v1.Capacity());
+
+	v1.PushBack(3);//???
+	v1.PushBack(9);//???
+	REQUIRE(3 == v1.Size());
+	REQUIRE(3 == v1.Capacity());
+
+	v1.PushBack(10);
+	REQUIRE(4 == v1.Size());
+	REQUIRE(6 == v1.Capacity());
 }
+
 
 

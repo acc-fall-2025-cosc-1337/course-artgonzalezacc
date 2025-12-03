@@ -9,7 +9,7 @@ MyVector::MyVector() : size(0), capacity(0) //constructor
 }
 
 MyVector::MyVector(int s)
-: size(s), capacity(s), elements{new int[size]}//create the dynamic memory of size s
+: size(0), capacity(s), elements{new int[size]}//create the dynamic memory of size s
 {
     cout<<"Created elements memory at: "<<elements<<"\n";
 }
@@ -137,7 +137,7 @@ void MyVector::PushBack(int value)
     }
     else if(size == capacity)//have 3 slots; we use them; 3*2 to get 6 slots
     {
-        Reserve(RESERVE_DEFAULT_MULTIPILER);
+        Reserve(RESERVE_DEFAULT_MULTIPILER*size);
     }
 
     elements[size] = value;
