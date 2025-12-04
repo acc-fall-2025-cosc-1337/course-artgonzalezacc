@@ -2,20 +2,22 @@
 
 using std::cout;
 
-//
-MyVector::MyVector() : size(0), capacity(0) //constructor
+template<typename T>
+MyVector<T>::MyVector() : size(0), capacity(0) //constructor
 {
 
 }
 
-MyVector::MyVector(int s)
-: size(0), capacity(s), elements{new int[size]}//create the dynamic memory of size s
+template<typename T>
+MyVector<T>::MyVector(int s)
+: size(0), capacity(s), elements{new T[size]}//create the dynamic memory of size s
 {
     cout<<"Created elements memory at: "<<elements<<"\n";
 }
 
-MyVector::MyVector(const MyVector& v1)
-: size(v1.size), capacity(v1.capacity), elements{new int[v1.size]} //deep copy
+template<typename T>
+MyVector<T>::MyVector(const MyVector<T>& v1)
+: size(v1.size), capacity(v1.capacity), elements{new T[v1.size]} //deep copy
 {
     cout<<"Constructor MyVector(const MyVector& v1) created memory at: "<<elements<<"\n";
 
@@ -33,9 +35,10 @@ MyVector::MyVector(const MyVector& v1)
 5-Set v2.size to v1.size
 6-Return a reference to itself
 */
-MyVector& MyVector::operator=(const MyVector& v1)
+template<typename T>
+MyVector<T>& MyVector<T>::operator=(const MyVector<T>& v1)
 {
-    int* temp = new int[v1.size];
+    T* temp = new T[v1.size];
 
     for(auto i=0; i < v1.size; i++)
     {
@@ -61,7 +64,8 @@ MyVector& MyVector::operator=(const MyVector& v1)
 3-point v1.elements to nothing(nullptr)
 4-set v1 size to 0
 */
-MyVector::MyVector(MyVector&& v1)
+template<typename T>
+MyVector<T>::MyVector(MyVector<T>&& v1)
 : size{v1.size}, elements{v1.elements}
 {
     cout<<"Move constructor - memory pointer switched from v1 to v1 "<<elements<<"\n";
@@ -78,7 +82,8 @@ MyVector::MyVector(MyVector&& v1)
 5-Set v1 size to 0
 6-return a self reference(pointer to v2)
 */
-MyVector& MyVector::operator=(MyVector&& v1)
+template<typename T>
+MyVector<T>& MyVector<T>::operator=(MyVector<T>&& v1)
 {
     cout<<"Move assignment delete memory "<<elements<<"\n";
     delete[] elements;
@@ -102,11 +107,12 @@ MyVector& MyVector::operator=(MyVector&& v1)
 5-set elements to temp memory
 6-set capacity to new_size
 */
-void MyVector::Reserve(int new_size)
+template<typename T>
+void MyVector<T>::Reserve(int new_size)
 {
     if(new_size > capacity)
     {
-        int* temp = new int[new_size];
+        T* temp = new T[new_size];
         cout<<"Reserve temp memory created: "<<temp<<"\n";
 
         for(auto i=0; i < size; i++)
@@ -129,7 +135,8 @@ PUSH BACK
 3-add value to current elements[SIZE]
 4-increment the size
 */
-void MyVector::PushBack(int value)
+template<typename T>
+void MyVector<T>::PushBack(T value)
 {
     if(capacity == 0) //0 memory; grant 8 new slots of memory
     {
@@ -144,15 +151,19 @@ void MyVector::PushBack(int value)
     size++;
 }
 
-MyVector::~MyVector()
+template<typename T>
+MyVector<T>::~MyVector()
 {
     cout<<"Free memory at : "<<elements<<"\n";
     delete[] elements;
 }
 
+template class MyVector<int>;
+template class MyVector<double>;
+
 //FREE FUNCTION - NOT PART OF MY VECTOR CLASS!!!!!!!!!!!!!!!!!!!
-MyVector get_vector()  
+MyVector<int> get_vector()  
 {
-    MyVector v1(3);
+    MyVector<int> v1(3);
     return v1;
 }
